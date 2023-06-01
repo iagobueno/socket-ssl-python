@@ -8,7 +8,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
     # Víncula o client_socket com o SSL
     with context.wrap_socket(client_socket, server_hostname='localhost') as ssl_client_socket:
         # Conecta ao servidor
-        ssl_client_socket.connect(('localhost', 35423))
+        ssl_client_socket.connect(('localhost', 8888))
 
         # Envia dados ao servidor
         message = "Hello from the client!"

@@ -5,8 +5,8 @@ context = lib_server.createContext()
 
 # Cria um socket TCP/IP
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-    server_socket.bind(('localhost', 35423))
-    server_socket.listen(5)
+    server_socket.bind(('192.168.1.33', 8888))
+    server_socket.listen(1)
 
     # Víncula o server_socker com o SSL
     with context.wrap_socket(server_socket, server_side=True) as ssl_server_socket:
