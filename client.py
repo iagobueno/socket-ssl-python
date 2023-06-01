@@ -1,11 +1,7 @@
 import socket
-import ssl
+import lib_client
 
-# Cria um contexto SSL
-context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-context.load_cert_chain(certfile="client.crt", keyfile="client.key")
-context.check_hostname = False
-context.verify_mode = ssl.CERT_NONE
+context = lib_client.createContext()
 
 # Cria um socket TCP/IP
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
